@@ -113,7 +113,7 @@ def game_hash
   end
 
   def num_points_scored(player)
-    game_hash.map{|key,val|val[:players].map{|k,v|k[:points] if k[:player_name]==player}.compact}.flatten[1]
+    game_hash.map{|key,val|val[:players].map{|k,v|k[:points] if k[:player_name]==player}.compact}.flatten[0]
   end
 
   def shoe_size
