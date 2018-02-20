@@ -113,6 +113,7 @@ def game_hash
   end
 
   def num_points_scored(player)
+    team_data[:players].map{|k,v|k[:points] if k[:player_name]==player}.compact.to_s
   end
 
   def shoe_size
@@ -143,3 +144,4 @@ def game_hash
     end
   end
 good_practices
+team_data[:players].map{|k,v|k[:points] if k[:player_name]=="Alan Anderson"}.compact
