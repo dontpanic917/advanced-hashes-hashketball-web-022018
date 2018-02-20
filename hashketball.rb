@@ -110,10 +110,9 @@ def game_hash
           blocks: 5,
           slam_dunks: 12
           }]}}
-        end
+  end
 
   def num_points_scored(player)
-    game_hash.
   end
 
   def shoe_size
