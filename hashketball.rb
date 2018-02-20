@@ -135,3 +135,7 @@ def game_hash
   def player_stats(player)
     game_hash.map{|key,val|val[:players].map{|k,v|k.reject!{|k|k==:player_name} if k[:player_name]==player}}.flatten.compact.shift
   end
+
+  def big_shoe_rebounds
+    game_hash.map{|key,val|val[:players].map{|k,v|k[:rebounds] if k[:shoe]>=k[:shoe].sort.last}}.flatten.compact.shift
+  end
