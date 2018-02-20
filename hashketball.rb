@@ -131,3 +131,7 @@ def game_hash
   def player_numbers(team)
     game_hash.map{|key,val|val[:players].map{|k,v|k[:number]} if val[:team_name]==team}.compact.flatten
   end
+
+  def player_stats(player)
+    game_hash.map{|key,val|val[:players].map{|k,v|k if k[:player_name]==player}.compact}.flatten[0]
+  end
