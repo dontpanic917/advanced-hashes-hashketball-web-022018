@@ -121,5 +121,5 @@ def game_hash
   end
 
   def team_colors(team)
-    game_hash.map{|k,team_data| team_data[:colors] if team_data[:team_name] == team}.compact
+    game_hash.map{|k,team_data| team_data[:colors] if team_data[:team_name] == team}.flatten
   end
