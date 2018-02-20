@@ -133,5 +133,5 @@ def game_hash
   end
 
   def player_stats(player)
-    game_hash.map{|key,val|val[:players].map{|k,v|k} if k[:player_name]==player}
+    game_hash.map{|key,val|val[:players].map{|k,v|k} if val[:player_name]==player}
   end
