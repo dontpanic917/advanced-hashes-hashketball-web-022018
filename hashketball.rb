@@ -123,3 +123,7 @@ def game_hash
   def team_colors(team)
     game_hash.map{|k,team_data| team_data[:colors] if team_data[:team_name] == team}.flatten.compact
   end
+
+  def team_names
+    game_hash.map{|location,team_data| team_data[:team_name]}
+  end
