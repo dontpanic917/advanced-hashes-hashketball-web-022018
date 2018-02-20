@@ -128,6 +128,6 @@ def game_hash
     game_hash.map{|location,team_data| team_data[:team_name]}
   end
 
-  def player_numbers
-    game_hash.map{|key,val|val[:players].map{|k,v|k[:number] if k[:player_name]==player}.compact}.flatten[0]
+  def player_numbers(team)
+    game_hash.map{|key,val|val[:players].map{|k,v|k[:number]}.compact if k[:team_name]==team}.flatten[0]
   end
