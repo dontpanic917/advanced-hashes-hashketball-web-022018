@@ -137,5 +137,7 @@ def game_hash
   end
 
   def big_shoe_rebounds
-    game_hash.map{|key,val|val[:players].map{|k,v|k[:rebounds] if k[:shoe]>=k[:shoe].sort.last}}.flatten.compact.shift
+    biggest=0
+    game_hash.map{|key,val|val[:players].map{|k,v|biggest = k[:shoe] if k[:shoe]>biggest}}
+    game_hash.map{|key,val|val[:players].map{|k,v|k[:rebounds] if k[:shoe]==k[:shoe].sort.last}}.flatten.compact.shift
   end
