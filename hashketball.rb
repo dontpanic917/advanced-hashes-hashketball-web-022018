@@ -133,5 +133,5 @@ def game_hash
   end
 
   def player_stats(player)
-    game_hash.map{|key,val|val[:players].map{|k,v|k.reject{|e|e[:player_name]} if k[:player_name]==player}.compact}.flatten[0]
+    game_hash.map{|key,val|val[:players].map{|k,v| k.map{|x| x if x != [:player_name]} if k[:player_name]==player}.compact}.flatten[0]
   end
